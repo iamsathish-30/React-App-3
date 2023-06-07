@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/troll-face.png";
+import logo from "../../public/images/troll-face.png";
 import '../main.css';
 const Header = () =>{
     return (
