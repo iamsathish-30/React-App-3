@@ -52,15 +52,14 @@ body{
 /* The Below styling is for Meme Component */
 
 .meme-container{
-    padding:60px 40px
+    padding:30px 40px
 }
 
 .form{
     display: grid;
     grid-template: 40px 40px / 1fr 1fr;
     gap: 28px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding:30px 100px
 }
 
 .input-field{
@@ -82,9 +81,45 @@ body{
     cursor: pointer;
 }   
 
-.meme-image{
+
+.meme {
+    position: relative;
+}
+
+.meme-image {
     max-width: 100%;
-    max-height: 300px;
-    margin-left: 100px;
-    margin-right: 100px;
+    padding-left: 100px;
+    border-radius: 3px;
+}
+
+.meme-text {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 25%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
 }
