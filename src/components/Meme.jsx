@@ -1,14 +1,31 @@
 import React from "react";
 import '../main.css';
-import datas from '../data.jsx'
+
+
 
 const Meme = () => {
-    const urlsArr = datas.data.memes; 
+    const [allMeme , setAllMeme] = React.useState({});
+
+    React.useEffect(()=>{
+        const func = async()=>{
+            const res = await fetch("https://api.imgflip.com/get_memes");;
+            const data = await res.json();
+            console.log(data);
+            setAllMeme(data);
+        }
+        func();
+    },[]);
+
+    const urlsArr = allMeme.data.memes; 
     console.log(urlsArr)
     const [meme , setMeme] = React.useState({
         topText:"",
         bottomText:"",
         img:"http://i.imgflip.com/1bij.jpg"});
+
+    
+
+    /* The Below block of code is for Handling EventListener */
 
     function handleClick(){
         const randomNumber = Math.floor(Math.random() * urlsArr.length);
@@ -28,6 +45,8 @@ const Meme = () => {
             }
         })
     }
+
+    /* The Above block of code is for Handling EventListener */
 
 
     return (
